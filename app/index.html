@@ -16,7 +16,7 @@
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="fonts/font.css">
+    <link rel="stylesheet" href="styles/font.css">
     <!-- endbuild -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="bower_components/angular-social/angular-social.css">
@@ -32,7 +32,6 @@
     <div class="notificationList" app-notifcations></div>
 
     <div class="page" ng-view=""></div>
-    
     <footer class="colophon">
       <div ng-include="'views/footer.html'"></div>
     </footer>
@@ -155,10 +154,10 @@
       <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&sensor=true"></script>
-        <script src="scripts/directives/google_maps.js"></script>
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/nav.js"></script>
+        <script src="scripts/directives/loader.js"></script>
         <!-- endbuild -->
         <script src="scripts/controllers/inicio.js"></script>
         <script src="scripts/controllers/mapa.js"></script>

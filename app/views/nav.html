@@ -23,12 +23,12 @@
           	<li ng-if='!user.log_in' class='responsive-menu'><a href="#" data-type='signin' data-toggle="modal" data-target="#myModal">Crear Cuenta</a></li>
 			
 			<li ng-if='user.log_in' class='responsive-menu'><a ng-class="getClass('/perfil')" ng-href="/#/perfil"><img ng-src="{{ user.image }}" alt="" height="25px"> Mi Perfil</a></li>
-			<li ng-if='user.log_in' class='responsive-menu'><a ng-class="getClass('/configuracion')" ng-href="/#/configuracion">>Configuración</a></li>
+			<li ng-if='user.log_in' class='responsive-menu'><a ng-class="getClass('/configuracion')" ng-href="/#/configuracion">Configuración</a></li>
 			<li ng-if='user.log_in' class='responsive-menu'><a ng-href="#" ng-click="signOut()" >Cerrar Sesion</a></li>
 
 
 			<li ng-if='user.log_in' class="dropdown no-responsive">
-				<a ng-href="#" class="dropdown-toggle" data-toggle="dropdown">
+				<a ng-href="" class="dropdown-toggle" data-toggle="dropdown">
 					<img ng-src="{{ user.image }}" alt="" height="25px">
 					{{ user.username }}
 					<span class="caret"></span>

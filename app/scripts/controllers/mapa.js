@@ -3,6 +3,7 @@
 angular.module('myAppAngularApp')
 	.controller('MapaCtrl', function ($scope) {
 		//Google maps
+		$scope.completeLoatedMap = false;
 	    $scope.loadMap = function(){
 	    	
 	        setTimeout(function(){
@@ -25,25 +26,10 @@ angular.module('myAppAngularApp')
 	                marker = new google.maps.Marker({
 	                    position: myLatlng,
 	                    map: map,
-	                    title: 'My store'
+	                    title: 'My Museum'
 	                });
 	            }
-
-		        //Click
-		        // google.maps.event.addListener(map, 'click', function(e) {
-		        //     if(marker != undefined){
-		        //         marker.setPosition(e.latLng);
-		        //         $scope.store.latlng = e.latLng.lat()+','+e.latLng.lng();
-		        //     } else {
-		        //         marker = new google.maps.Marker({
-		        //             position: e.latLng,
-		        //             map: map,
-		        //             title: 'My store'
-		        //         });
-
-		        //         $scope.store.latlng = e.latLng.lat()+','+e.latLng.lng();
-		        //     }
-		        // });
+	            $scope.completeLoatedMap = true;
 	        }, 500);
 	    }
 
