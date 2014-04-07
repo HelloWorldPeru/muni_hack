@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'museo-1';
+  font-style: bold;
+  font-weight: 300;
+  src: url('../fonts/museosansrounded-300-webfont.woff') format('woff');
+}
+@font-face {
+  font-family: 'museo-2';
+  font-style: bold;
+  font-weight: 500;
+  src: url('../fonts/museosansrounded-500-webfont.woff') format('woff');
+}
+@font-face {
+  font-family: 'museo-3';
+  font-style: bold;
+  font-weight: 700;
+  src: url('../fonts/museosansrounded-700-webfont.woff') format('woff');
+}
