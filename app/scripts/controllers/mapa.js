@@ -45,4 +45,5 @@ angular.module('myAppAngularApp')
 	    }
 
 	    $scope.loadMap();
+	    
   	});

@@ -2,7 +2,7 @@
 
 angular.module('myAppAngularApp')
   .controller('MainCtrl', function ($scope, $http) {
-    $http.get('http://127.0.0.1:1337/school')
+    $http.get('http://hackcultura2014.herokuapp.com/user')
     .success(function(resp){
     	debugger
     });
