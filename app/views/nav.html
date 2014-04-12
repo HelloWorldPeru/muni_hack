@@ -24,7 +24,7 @@
 			
 			<li ng-if='user.log_in' class='responsive-menu'><a ng-class="getClass('/perfil')" ng-href="/#/perfil"><img ng-src="{{ user.image }}" alt="" height="25px"> Mi Perfil</a></li>
 			<li ng-if='user.log_in' class='responsive-menu'><a ng-class="getClass('/configuracion')" ng-href="/#/configuracion">Configuración</a></li>
-			<li ng-if='user.log_in' class='responsive-menu'><a ng-href="#" ng-click="signOut()" >Cerrar Sesion</a></li>
+			<li ng-if='user.log_in' class='responsive-menu'><a ng-href="#" ng-click="login()" >Cerrar Sesion</a></li>
 
 
 			<li ng-if='user.log_in' class="dropdown no-responsive">
@@ -36,7 +36,7 @@
 				<ul class="dropdown-menu">
 					<li><a ng-class="getClass('/perfil')" ng-href="/#/perfil">Mi Perfil</a></li>
 					<li><a ng-class="getClass('/configuracion')" ng-href="/#/configuracion">Configuración</a></li>
-					<li><a ng-href="#" ng-click="signOut()" >Cerrar Sesion</a></li>
+					<li><a ng-href="#" ng-click="logout()" >Cerrar Sesion</a></li>
 				</ul>
 			</li>
           	<li ng-if='!user.log_in' class='dropdown no-responsive'>
@@ -53,4 +53,92 @@
 		</ul>
 	</div>
 </nav>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+    <div class="modal-dialog">      
+      <div class="col-md-12">
+        <div class="panel panel1 panel-default">
+          <div class="panel-heading">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 class="panel-title">Please sign in!</h3>
+        </div>
+          <div class="panel-body">
+            <form accept-charset="UTF-8" role="form">
+                    <fieldset>
+                <div class="form-group">
+                	<input class="form-control last-form-control" placeholder="Email" name="email" type="text" ng-model='login_email'>
+              </div>
+              <div class="form-group">
+                <input class="form-control last-form-control" placeholder="Password" name="password" type="password" ng-model='login_password'>
+              </div>
+              <br>
+              <a href="" class='pull-right' data-type='password'>Forgot password?</a>
+              <div class="checkbox">
+                  <label>
+                    <input name="remember" type="checkbox" value="Remember Me"> Remember Me
+                  </label>
+                </div>
+              <input class="btn btn-lg btn-success btn-block" type="submit" value="Login" ng-click="login()">
+              <br>
+              <p class='text-center'>
+                <a href="" data-type='signin'>Register for an account?</a>
+              </p>
+            </fieldset>
+              </form>
+          </div>
+      </div>      
+      <div class="panel panel2 panel-default">
+          <div class="panel-heading">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 class="panel-title">Register now!</h3>
+        </div>
+          <div class="panel-body">
+            <form accept-charset="UTF-8" role="form" ng-submit='login()'>
+                    <fieldset>
+              <div class="form-group">
+                  <input class="form-control" placeholder="E-mail" name="email" type="email" ng-model='email'>      
+              </div>
+              <div class="form-group">
+                <input class="form-control" placeholder="Password" name="password" type="password" ng-model='password'>
+              </div>
+              <div class="form-group">
+                <input class="form-control last-form-control" placeholder="Confirm Password" name="password_confirmation" type="password" value="" ng-model='repassword'>
+              </div>
+              <br>
+              <input class="btn btn-lg btn-primary btn-block" type="submit" value="Register" ng-click="signup()"> 
+              <br>
+              <p class='text-center'>
+                <a href="" data-type='login'>Already have an account?</a>
+              </p>
+              {{ email }}
+            </fieldset>
+              </form>
+          </div>
+      </div>      
+      <div class="panel panel3 panel-default">
+          <div class="panel-heading">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 class="panel-title">Request password reset!</h3>
+        </div>
+          <div class="panel-body">
+            <form accept-charset="UTF-8" role="form">
+                    <fieldset>                
+                      <div class="form-group">
+                  <input class="form-control middle" placeholder="Enter your E-mail" name="email" type="text">      
+              </div>           
+              <br>    
+              <input class="btn btn-lg btn-success btn-block" type="submit" value="Register"> 
+              <br>
+              <p class='text-center'>
+                Remembered your password?  <a href="" data-type='login'>Already have an account?</a>
+              </p>
+            </fieldset>
+              </form>
+          </div>
+      </div>      
+      </div>
+    </div>
+
+
 <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
