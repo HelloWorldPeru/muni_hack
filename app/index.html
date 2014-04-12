@@ -36,92 +36,7 @@
       <div ng-include="'views/footer.html'"></div>
     </footer>
     <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">      
-      <div class="col-md-12">
-        <div class="panel panel1 panel-default">
-          <div class="panel-heading">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3 class="panel-title">Please sign in!</h3>
-        </div>
-          <div class="panel-body">
-            <form accept-charset="UTF-8" role="form" ng-submit='signIn()'>
-                    <fieldset>
-                <div class="form-group">
-                  <input class="form-control" placeholder="E-mail" name="email" type="text" mg-model='email'>
-              </div>
-              <div class="form-group">
-                <input class="form-control last-form-control" placeholder="Password" name="password" type="password" ng-model='password'>
-              </div>
-              <br>
-              <a href="" class='pull-right' data-type='password'>Forgot password?</a>
-              <div class="checkbox">
-                  <label>
-                    <input name="remember" type="checkbox" value="Remember Me"> Remember Me
-                  </label>
-                </div>
-              <input class="btn btn-lg btn-success btn-block" type="submit" value="Login">
-              <br>
-              <p class='text-center'>
-                <a href="" data-type='signin'>Register for an account?</a>
-              </p>
-            </fieldset>
-              </form>
-          </div>
-      </div>      
-      <div class="panel panel2 panel-default">
-          <div class="panel-heading">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3 class="panel-title">Register now!</h3>
-        </div>
-          <div class="panel-body">
-            <form accept-charset="UTF-8" role="form" ng-submit='login()'>
-                    <fieldset>
-                <div class="form-group">
-                  <input class="form-control" placeholder="Username" name="username" type="text"> 
-              </div>
-              <div class="form-group">
-                  <input class="form-control" placeholder="E-mail" name="email" type="text" ng-model='email'>      
-              </div>
-              <div class="form-group">
-                <input class="form-control" placeholder="Password" name="password" type="password" ng-model='password'>
-              </div>
-              <div class="form-group">
-                <input class="form-control last-form-control" placeholder="Confirm Password" name="password_confirmation" type="password" value="">
-              </div>
-              <br>
-              <input class="btn btn-lg btn-primary btn-block" type="submit" value="Register"> 
-              <br>
-              <p class='text-center'>
-                <a href="" data-type='login'>Already have an account?</a>
-              </p>
-            </fieldset>
-              </form>
-          </div>
-      </div>      
-      <div class="panel panel3 panel-default">
-          <div class="panel-heading">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3 class="panel-title">Request password reset!</h3>
-        </div>
-          <div class="panel-body">
-            <form accept-charset="UTF-8" role="form">
-                    <fieldset>                
-                      <div class="form-group">
-                  <input class="form-control middle" placeholder="Enter your E-mail" name="email" type="text">      
-              </div>           
-              <br>    
-              <input class="btn btn-lg btn-success btn-block" type="submit" value="Register"> 
-              <br>
-              <p class='text-center'>
-                Remembered your password?  <a href="" data-type='login'>Already have an account?</a>
-              </p>
-            </fieldset>
-              </form>
-          </div>
-      </div>      
-      </div>
-    </div>
+
 </div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -161,5 +76,10 @@
         <!-- endbuild -->
         <script src="scripts/controllers/inicio.js"></script>
         <script src="scripts/controllers/mapa.js"></script>
+        <script type="text/javascript">
+          angular.module('myAppAngularApp').value("sessionVariables", {
+              mainDomain: 'http://127.0.0.1:1337/',
+          });
+        </script>
 </body>
 </html>
