@@ -1,7 +1,7 @@
 <loader ng-if='!completeLoatedMap'></loader>
-<section class="content-map">
-	<div id="gmaps-canvas"></div>
-	<div class="search-map">
+<section id="content-map" ng-class="{increaseWidth:seeListSearchOptions}">
+	<a class='button-search-list' ng-click='searchListToggle()' href="">SEE MORE</a>
+	<div class="search-map" ng-class="{seeSearch:seeListSearchOptions}">
 		<h2>Lista de eventos</h2>
   		<input type="text" ng-model='search'>
 		<ul class='points-container'>
@@ -10,4 +10,5 @@
 			</li>
 		</ul>
 	</div>
+	<div id="gmaps-canvas"></div>
 </section>

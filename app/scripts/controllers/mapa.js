@@ -45,5 +45,20 @@ angular.module('myAppAngularApp')
 	    }
 
 	    $scope.loadMap();
+	    $scope.seeListSearchOptions = false;
 	    
+	    $scope.searchListToggle = function() {
+	    	debugger
+
+	    	$scope.seeListSearchOptions = !$scope.seeListSearchOptions;
+
+	    	var element = angular.element('.search-map');
+	    	if($scope.seeListSearchOptions) {
+	    		element.animate({width: '23%', marginLeft: 0}, 'slow');	
+	    	}
+	    	else {
+	    		element.animate({width: '0', marginLeft: '-200px'}, 'fast');
+	    	}
+	    	
+	    };
   	});

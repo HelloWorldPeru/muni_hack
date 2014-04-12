@@ -22,9 +22,10 @@ angular.module('myAppAngularApp')
         if(type == 'signin') angular.element('.panel2').show();
         if(type == 'forgot-password') angular.element('.panel3').show();
     };
+    $scope.casa = 34;
     $http.get('http://hackcultura2014.herokuapp.com/user')
     .success(function(resp){
-        debugger
+        
     });
     // $http.post('http://localhost:1337/signup', {'email': $scope.email, 'password': $scope.password})
     // .success(function(resp){

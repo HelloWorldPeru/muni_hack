@@ -166,31 +166,30 @@ body > footer {
 }
 /*map*/
 #gmaps-canvas {
-  width: 40%;
+  width: 65%;
   position: relative !important;
-  height: 25em;
+  height: 30em;
   z-index: 8;
   display: inline-block;
   border: 5px solid;
 }
-section.content-map.ng-scope {
+section#content-map{
     background: white;
     text-align: center;
     padding: 6em 0;
 }
 div.search-map {
-    width: 50%;
-    display: inline-block;
     vertical-align: top;
+    -webkit-transition: all .5s ease-in-out;
+    width: 0;
+    display: none;
 }
 ul.points-container {
-    width: 30%;
-    margin: 0 auto;
-    text-align: left;
-    padding-left: 1.2em;
-    margin-top: 1em;
-    overflow-y: scroll;
-    max-height: 18em;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 1em;
+  overflow-y: scroll;
+  max-height: 18em;
 }
 ul.points-container > li {
     margin-bottom: 5px;
@@ -198,6 +197,23 @@ ul.points-container > li {
 div.search-map h2 {
     margin: 0;
 }
+.increaseWidth {
+  width: 120%;
+}
+.seeSearch {
+  display: inline-block !important;
+  -webkit-transition: all .5s ease-in-out;
+}
+
+a.button-search-list {
+    vertical-align: top;
+    background: rgb(80, 70, 70);
+    color: white;
+    padding: 3px;
+    border-radius: 7px;
+}
+
+
 /*****************************/
 /*********** MENU ************/
 /*****************************/
