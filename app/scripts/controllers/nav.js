@@ -11,7 +11,6 @@ angular.module('myAppAngularApp')
     	else 
     		return ''
     };
-
     $scope.email = '';
     $scope.login_email = '';
     $scope.login_password = '';
@@ -26,21 +25,23 @@ angular.module('myAppAngularApp')
     };
 
     $scope.signup = function(){
-        debugger;
-        if($scope.password == $scope.repassword){
-            $http.get(domain+'signup/?email='+$scope.email+'&password='+$scope.password)
+        var email = this.email,
+        password = this.password,
+        repassword = this.repassword;
+        if(password == repassword){
+            $http.get(domain+'signup/?email='+email+'&password='+password)
             .success(function(resp){
                 $scope.user = resp;
                 alert('registro');
             });
         } else { 
-            alert('passewerd');
+            alert('password');
         }
     };
-
     $scope.login = function(){
-        debugger;
-        $http.get(domain+'login/?email='+$scope.login_email+'&password='+$scope.login_password)
+        var email = this.login_email,
+        pass = this.login_password;
+        $http.get(domain+'login/?email='+email+'&password='+pass)
             .success(function(resp){
                 $scope.user = resp;
                 alert('logeado');
@@ -48,9 +49,6 @@ angular.module('myAppAngularApp')
     };
 
     $scope.logout = function(){
-        $http.get(domain+'logout/?email='+$scope.email+'&password='+$scope.password)
-            .success(function(resp){
-                $scope.user = {};
-            });
+        $scope.user = {};    
     };
   });
