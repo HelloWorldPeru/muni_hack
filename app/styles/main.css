@@ -166,12 +166,37 @@ body > footer {
 }
 /*map*/
 #gmaps-canvas {
-    width: 100%;
-    position: absolute !important;
-    height: 100%;
-    top: 3.5em;
-    left: 0;
-    z-index: 8;
+  width: 40%;
+  position: relative !important;
+  height: 25em;
+  z-index: 8;
+  display: inline-block;
+  border: 5px solid;
+}
+section.content-map.ng-scope {
+    background: white;
+    text-align: center;
+    padding: 6em 0;
+}
+div.search-map {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+}
+ul.points-container {
+    width: 30%;
+    margin: 0 auto;
+    text-align: left;
+    padding-left: 1.2em;
+    margin-top: 1em;
+    overflow-y: scroll;
+    max-height: 18em;
+}
+ul.points-container > li {
+    margin-bottom: 5px;
+}
+div.search-map h2 {
+    margin: 0;
 }
 /*****************************/
 /*********** MENU ************/
