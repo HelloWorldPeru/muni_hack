@@ -26,7 +26,6 @@ angular.module('myAppAngularApp')
     };
 
     $scope.signup = function(){
-        debugger;
         if($scope.password == $scope.repassword){
             $http.get(domain+'signup/?email='+$scope.email+'&password='+$scope.password)
             .success(function(resp){
@@ -39,11 +38,9 @@ angular.module('myAppAngularApp')
     };
 
     $scope.login = function(){
-        debugger;
-        $http.get(domain+'login/?email='+$scope.login_email+'&password='+$scope.login_password)
+        $http.get(domain+'login/?email='+this.login_email+'&password='+this.login_password)
             .success(function(resp){
                 $scope.user = resp;
-                alert('logeado');
             });
     };
 

@@ -16,8 +16,8 @@ angular.module('myAppAngularApp')
         }
     };
 
-    $scope.login = function(){
-        $http.get(domain+'/ogin/?email='+$scope.email+'&password='+$scope.password)
+    $scope.login = function(email, pass){
+        $http.get(domain+'/ogin/?email='+email+'&password='+password)
             .success(function(resp){
                 debugger
             });
@@ -30,3 +30,5 @@ angular.module('myAppAngularApp')
             });
     };
   });
+
+//admin@gmail.com
