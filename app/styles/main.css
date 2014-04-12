@@ -185,6 +185,7 @@ div.search-map {
     display: none;
 }
 ul.points-container {
+  text-align: left;
   width: 70%;
   margin: 0 auto;
   margin-top: 1em;

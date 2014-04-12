@@ -2,13 +2,31 @@
 <section id="content-map" ng-class="{increaseWidth:seeListSearchOptions}">
 	<a class='button-search-list' ng-click='searchListToggle()' href="">SEE MORE</a>
 	<div class="search-map" ng-class="{seeSearch:seeListSearchOptions}">
-		<h2>Lista de eventos</h2>
-  		<input type="text" ng-model='search'>
+		<button type="button" class="btn btn-success">Escuelas</button>
+		<button type="button" class="btn btn-info">Eventos</button>
+		<br>
+		<form role="form">
+			  <div class="form-group">
+			    <label for="exampleInputEmail1"></label>
+			    <input style="width: 90% !important;" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="" ng-model='hola'>
+			  </div>
+			  {{ hola }}
+  		</form>
+  		<input name="prueba" np-model="search" />
+  		{{ search }}
 		<ul class='points-container'>
-			<li ng-repeat='item in points | filter: search'>
-				<a href="item">{{item[3]}}</a>
+			<li ng-repeat='item in school | filter: search'>
+				<a href="item">{{ item[3] }}</a>
 			</li>
 		</ul>
+
+<!-- 		<ul class='points-container'>
+			<li ng-repeat='item in points | filter: search'>
+				<a href="item">{{ item[3] }}</a>
+			</li>
+		</ul> -->
+
+
 	</div>
 	<div id="gmaps-canvas"></div>
 </section>
