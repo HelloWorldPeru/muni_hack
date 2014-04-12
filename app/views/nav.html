@@ -8,26 +8,26 @@
 	</div>
 	<div class="navbar-collapse collapse">
 		<ul class="nav navbar-nav">
-			<li ng-if='!user.log_in'><a ng-class="getClass('/')" ng-href="/#/">Home</a></li>
+			<li ng-if='!user.token'><a ng-class="getClass('/')" ng-href="/#/">Home</a></li>
 
-			<li ng-if='user.log_in'><a ng-class="getClass('/inicio')" ng-href="/#/inicio">Inicio</a></li>
-			<li ng-if='user.log_in'><a ng-class="getClass('/mapa')" ng-href="/#/mapa">Mapa</a></li>
+			<li ng-if='user.token'><a ng-class="getClass('/inicio')" ng-href="/#/inicio">Inicio</a></li>
+			<li ng-if='user.token'><a ng-class="getClass('/mapa')" ng-href="/#/mapa">Mapa</a></li>
 
-			<li ng-if='user.log_in'><a ng-class="getClass('/registra')" ng-href="/#/registra">Registra</a></li>
-			<li ng-if='!user.log_in'><a ng-class="getClass('/acerca')" ng-href="/#/acerca">Acerca</a></li>
+			<li ng-if='user.token'><a ng-class="getClass('/registra')" ng-href="/#/registra">Registra</a></li>
+			<li ng-if='!user.token'><a ng-class="getClass('/acerca')" ng-href="/#/acerca">Acerca</a></li>
 
-			<li ng-if='user.log_in'><a ng-class="getClass('/califica')" ng-href="/#/califica">Califica</a></li>
-			<li ng-if='!user.log_in'><a ng-class="getClass('/ayuda')" ng-href="/#/ayuda">Ayuda</a></li>
+			<li ng-if='user.token'><a ng-class="getClass('/califica')" ng-href="/#/califica">Califica</a></li>
+			<li ng-if='!user.token'><a ng-class="getClass('/ayuda')" ng-href="/#/ayuda">Ayuda</a></li>
 			
-			<li ng-if='!user.log_in' class='responsive-menu'><a href="#" data-type='login' data-toggle="modal" data-target="#myModal">Entrar</a></li>
-          	<li ng-if='!user.log_in' class='responsive-menu'><a href="#" data-type='signin' data-toggle="modal" data-target="#myModal">Crear Cuenta</a></li>
+			<li ng-if='!user.token' class='responsive-menu'><a href="#" data-type='login' data-toggle="modal" data-target="#myModal">Entrar</a></li>
+          	<li ng-if='!user.token' class='responsive-menu'><a href="#" data-type='signin' data-toggle="modal" data-target="#myModal">Crear Cuenta</a></li>
 			
-			<li ng-if='user.log_in' class='responsive-menu'><a ng-class="getClass('/perfil')" ng-href="/#/perfil"><img ng-src="{{ user.image }}" alt="" height="25px"> Mi Perfil</a></li>
-			<li ng-if='user.log_in' class='responsive-menu'><a ng-class="getClass('/configuracion')" ng-href="/#/configuracion">Configuración</a></li>
-			<li ng-if='user.log_in' class='responsive-menu'><a ng-href="#" ng-click="login()" >Cerrar Sesion</a></li>
+			<li ng-if='user.token' class='responsive-menu'><a ng-class="getClass('/perfil')" ng-href="/#/perfil"><img ng-src="{{ user.image }}" alt="" height="25px"> Mi Perfil</a></li>
+			<li ng-if='user.token' class='responsive-menu'><a ng-class="getClass('/configuracion')" ng-href="/#/configuracion">Configuración</a></li>
+			<li ng-if='user.token' class='responsive-menu'><a ng-href="#" ng-click="login()" >Cerrar Sesion</a></li>
 
 
-			<li ng-if='user.log_in' class="dropdown no-responsive">
+			<li ng-if='user.token' class="dropdown no-responsive">
 				<a ng-href="" class="dropdown-toggle" data-toggle="dropdown">
 					<img ng-src="{{ user.image }}" alt="" height="25px">
 					{{ user.username }}
@@ -39,7 +39,7 @@
 					<li><a ng-href="#" ng-click="logout()" >Cerrar Sesion</a></li>
 				</ul>
 			</li>
-          	<li ng-if='!user.log_in' class='dropdown no-responsive'>
+          	<li ng-if='!user.token' class='dropdown no-responsive'>
                 <a class="dropdown-toggle" data-toggle="dropdown">
                   	Ingresar
               		<span class="caret"></span>
