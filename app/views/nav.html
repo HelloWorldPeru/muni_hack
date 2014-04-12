@@ -45,8 +45,9 @@
               		<span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href="#" data-type='login' data-toggle="modal" data-target="#myModal">Entrar</a></li>
-                  <li><a href="#" data-type='signin' data-toggle="modal" data-target="#myModal">Crear Cuenta</a></li>
+                  <li><a href="#" data-type='login' ng-click="getModal('login')" data-toggle="modal" data-target="#myModal">Entrar</a></li>
+                  <li><a href="#" data-type='signin' ng-click="getModal('signin')" data-toggle="modal" data-target="#myModal">Crear Cuenta</a></li>
+                  <li><a href="#" data-type='forgot-password' ng-click="getModal('forgot-password')" data-toggle="modal" data-target="#myModal">Olvide Contraseña</a></li>
                 </ul>
           	</li>
 		</ul>
