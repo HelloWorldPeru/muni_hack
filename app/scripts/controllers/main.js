@@ -2,9 +2,7 @@
 
 angular.module('myAppAngularApp')
   .controller('MainCtrl', function ($scope, $http) {
-    
-    debugger
-    $http.get('http://localhost:1337/user')
+    $http.get('http://127.0.0.1:1337/school')
     .success(function(resp){
     	debugger
     });

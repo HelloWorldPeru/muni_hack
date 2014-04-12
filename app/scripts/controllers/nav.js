@@ -16,7 +16,6 @@ angular.module('myAppAngularApp')
 
     $scope.email = '';
     $scope.password = '';
-    debugger
     $scope.getModal = function(type) {
         debugger
         angular.element('.panel').hide();
@@ -24,9 +23,4 @@ angular.module('myAppAngularApp')
         if(type == 'signin') angular.element('.panel2').show();
         if(type == 'forgot-password') angular.element('.panel3').show();
     };
-    debugger
-    $http.get('http://localhost:1337/user')
-    .success(function(resp){
-        debugger
-    });
   });
