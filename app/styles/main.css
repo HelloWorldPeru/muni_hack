@@ -23,7 +23,6 @@ ul {
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
-  height: 450px;
   background: white;
   margin: 0;
 }
@@ -57,6 +56,7 @@ ul {
     text-align: center;
     padding: 90px 0;
 }
+
 /*footer*/
 body > footer {
     background-color: black;
@@ -342,6 +342,18 @@ button.btn.btn-primary.create-event {
     width: 100%;
     padding: 1em;
     margin-bottom: 0em;
+}
+.jumbotron li.ng-scope {
+    display: inline-block;
+    margin: 20px;
+}
+.jumbotron li.ng-scope img {
+    border-radius: 5px;
+    -webkit-transform: scale(.9);
+    -webkit-transition: all .4s ease-in-out;
+}
+.jumbotron li.ng-scope img:hover {
+    -webkit-transform: scale(1);
 }
 /*****************************/
 /*********** MENU ************/

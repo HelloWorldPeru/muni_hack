@@ -40,7 +40,8 @@ angular
         controller: 'RegistraCtrl'
       })
       .when('/califica', {
-        templateUrl: 'views/califica.html'
+        templateUrl: 'views/califica.html',
+        controller: 'CalificaCtrl'
       })
       .otherwise({
         redirectTo: '/'
