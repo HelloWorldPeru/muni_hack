@@ -48,9 +48,22 @@ angular.module('myAppAngularApp')
   			'&status=3'+'&longitude='+$scope.longitude+'&latitude='+$scope.latitude;
         
       $http.get(url)
-            .success(function(resp){
-            	
-            });
+      .success(function(resp){
+      	debugger
+        var body = $("html, body");
+        body.animate({scrollTop: 0}, 'slow');
+        $scope.nombre = '';
+        $scope.cate = '';
+        $scope.entrada = '';
+        $scope.fecha = '';
+        $scope.fechLimit = '';
+        $scope.foto = '';
+        $scope.hora = '';
+        $scope.descrip = '';
+        $scope.presu = '';
+        alert('Guardado!');
+
+      });
   	}
 
 

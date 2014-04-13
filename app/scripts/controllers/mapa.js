@@ -117,6 +117,11 @@ debugger
 		        }
 		        function showInformationAboutInstitute(points) {
 			    	$scope.currentMarker = points;
+			    	$http.get('http://127.0.0.1:1337/donation/event/'+$scope.currentMarker.id)
+			    		.success(function(resp) {
+			    			$scope.currentMarker.calculate = resp;
+			    			$scope.currentMarker.calculate.percentaje = Math.round($scope.currentMarker.calculate.percentaje)
+			    	});
 			    	$scope.$apply();
 			    	var element = angular.element('.description_option');
 			    	element.slideDown();
@@ -172,8 +177,17 @@ debugger
 	  	};
 
 	  	$scope.donateMoneyHelp = function() {
-	  		var perce = $scope.money_help/currentMarker.cost;
-	  		
+	  		// $scope.$apply();
+	  		$scope.currentMarker.calculate.percentaje += $scope.money_help/$scope.currentMarker.cost;
+	  		$scope.money_help = '';
+	  		// $scope.$apply();
 	  		debugger
+	  		angular.element('.main-progress-bar').css('width',$scope.currentMarker.calculate.percentaje+"%");
+	  		$('#myModal2').modal('hide');
 	  	};
+	  	$scope.donateOtherHelp = function() {
+	  		$scope.other_help = '';
+	  		$scope.descriptionOtherHelp = '';
+	  		$('#myModal2').modal('hide');	
+	  	}
   	});
