@@ -73,10 +73,12 @@ angular.module('myAppAngularApp')
 	    	if(filter == 'free'){
 	    		$scope.state=true;
 	    	}
-
+debugger
 	    	var url = domain+'event/'+type+'/?filter='+filter;
+	    	debugger
 	    	$http.get(url)
     		.success(function(resp) {
+    			debugger
     			$scope.point = resp;
 
     			var mapOptions = {
@@ -88,7 +90,7 @@ angular.module('myAppAngularApp')
 
 	            var infowindow = new google.maps.InfoWindow();
 	            var marker, i, icon;
-	            
+	            debugger
     			for(var j=1; j<=$scope.point.length;j++) {
     				try{
     					if($scope.point[j].status == '3')
@@ -143,7 +145,7 @@ angular.module('myAppAngularApp')
 	    var url = domain+'event';
 	    $http.get(url)
 	    .success(function(resp) {
-	    	$scope.loadEvents('free', 0);
+	    	$scope.loadEvents('free', '');
 	    	$scope.itemsEvents = resp;
 
 	    	// showSlider();
