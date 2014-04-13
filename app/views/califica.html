@@ -1,6 +1,11 @@
 <div class="jumbotron">
-  <br>
-  <br>
-  <h1>Bienvenido!</h1>
-  <br>
+  <ul>
+  	<li ng-repeat='item in items'>
+ 		<figure>
+ 			<img ng-src="{{item.photo}}" alt="">
+ 			<h3>{{item.name}}</h3>
+			<h4>{{item.titulo}}</h4>
+ 		</figure>
+  	</li>
+  </ul>
 </div>
