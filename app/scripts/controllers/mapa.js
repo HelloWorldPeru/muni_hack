@@ -15,6 +15,7 @@ angular.module('myAppAngularApp')
 	    	var url = domain+'school';
 	    	$http.get(url)
     		.success(function(resp) {
+    			debugger
     			$scope.school = resp;
 
     			var mapOptions = {
@@ -40,13 +41,25 @@ angular.module('myAppAngularApp')
 		                });
 		                google.maps.event.addListener(marker, 'click', (function(marker, j) {
 					        return function() {
+					        	$scope.map.setCenter(marker.getPosition());
 				          		infowindow.setContent($scope.school[j].name);
 					          	infowindow.open($scope.map, marker);
+					          	debugger
+					          	showInformationAboutInstitute($scope.school[j]);	
 				        	}
 				      	})(marker, j));
 			            $scope.completeLoatedMap = true;
 					} catch(err){}
 		        }
+		        function showInformationAboutInstitute(points) {
+		        	debugger
+			    	$scope.currentMarker = points;
+			    	$scope.$apply();
+			    	var element = angular.element('.description_option');
+			    	element.slideDown();
+			    	var body = $("html, body");
+					body.animate({scrollTop: element.offset().top-50}, 'slow');
+			    } 
     		});
 	    }
 
@@ -91,26 +104,14 @@ angular.module('myAppAngularApp')
 		                });
 		                google.maps.event.addListener(marker, 'click', (function(marker, j) {
 					        return function() {
-					        	map.setCenter(marker.getPosition());
+					        	debugger
 				          		infowindow.setContent($scope.point[j].name);
-					          	infowindow.open($scope.map, marker);
-					          	showInformationAboutInstitute($scope.points[j]);				          	
+					          	infowindow.open($scope.map, marker);				          	
 				        	}
 				      	})(marker, j));
 			            $scope.completeLoatedMap = true;
-    				} catch(err){
-
-    				}
-		        }
-
-		        function showInformationAboutInstitute(points) {
-			    	$scope.currentMarker = points;
-			    	$scope.$apply();
-			    	var element = angular.element('.description_option');
-			    	element.slideDown();
-			    	var body = $("html, body");
-					body.animate({scrollTop: element.offset().top-50}, 'slow');
-			    } 		
+    				} catch(err){}
+		        }		
     		});
 	    }
 
@@ -128,26 +129,33 @@ angular.module('myAppAngularApp')
 	    var url = domain+'event';
 	    $http.get(url)
 	    .success(function(resp) {
-	    	$scope.itemsEvents = resp.events;
-	    	showSlider();
+	    	$scope.itemsEvents = resp;
+	    	debugger
+	    	// showSlider();
 	    });
-	    function showSlider() {
-	    	var items = [],
-		    slide = Math.ceil($scope.itemsEvents.length/2);
-		    for (var i = 0; i <slide; i++) {
-				items[i] = {};
-				items[i].page = [];
-			};	
-			debugger
-			for(var i=0; i<slide; i++){
-				for(var j=0; j<2; j++){
-					if(items[i].page.length < 3){
-						items[i].page.push($scope.itemsEvents.shift());					
-					}	
-				}
-			}
-			debugger
-			$scope.events = items;
-	    }
-
+	  //   function showSlider() {
+	  //   	debugger
+	  //   	var items = [],
+		 //    slide = Math.ceil($scope.itemsEvents.length/2);
+		 //    for (var i = 0; i <slide; i++) {
+			// 	items[i] = {};
+			// 	items[i].page = [];
+			// };	
+			// debugger
+			// for(var i=0; i<slide; i++){
+			// 	for(var j=0; j<2; j++){
+			// 		if(items[i].page.length < 3){
+			// 			items[i].page.push($scope.itemsEvents.shift());					
+			// 		}	
+			// 	}
+			// }
+			// debugger
+			// $scope.events = items;
+	  //   }
+	  	$scope.showPanelHelp = function(type) {
+	  		angular.element('.form-panel-help').hide();
+	  		if(type == 'dinero') angular.element('.form-panel-help1').show();
+	  		// if(type == 'materiales') angular.element('.form-panel-help2').show();
+	  		if(type == 'otros') angular.element('.form-panel-help3').show();
+	  	};
   	});

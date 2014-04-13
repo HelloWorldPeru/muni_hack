@@ -65,7 +65,7 @@
             <h3 class="panel-title">Please sign in!</h3>
         </div>
           <div class="panel-body">
-            <form accept-charset="UTF-8" role="form">
+            <form accept-charset="UTF-8" role="form" ng-submit='login()'>
                     <fieldset>
                 <div class="form-group">
                 	<input class="form-control last-form-control" placeholder="Email" name="email" type="text" ng-model='login_email'>
@@ -95,7 +95,7 @@
             <h3 class="panel-title">Register now!</h3>
         </div>
           <div class="panel-body">
-            <form accept-charset="UTF-8" role="form" ng-submit='login()'>
+            <form accept-charset="UTF-8" role="form" ng-submit='signup()'>
                     <fieldset>
               <div class="form-group">
                   <input class="form-control" placeholder="E-mail" name="email" type="email" ng-model='email'>      

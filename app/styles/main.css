@@ -17,6 +17,7 @@ ul {
 /*PAGE HOME*/
 .page {
     padding-top: 2%;
+    height: auto;
 }
 /* Main marketing message and sign up button */
 .jumbotron {
@@ -225,12 +226,12 @@ a.button-search-list {
 .twitter-icon {
     background-color: #1caff6 !important;
 }
-.descrip ul > li {
+.descrip ul > li, .about-event-social > li{
     display: inline-block;
     background: rgb(129, 136, 177);
     border-radius: 5px;
 }
-.descrip ul > li > a {
+.descrip ul > li > a, .about-event-social > li a {
     padding: 7px 20px;
     display: block;
     color: white;
@@ -243,7 +244,7 @@ a.button-search-list {
     margin: 0 auto;
     display: inline-block;
     width: 64%;
-    padding: 1em 0 5em 0;
+    padding: 1em 0 4em 0;
     position: relative;
 }
 figure.image {}
@@ -258,14 +259,14 @@ div.descrip > h3 {
     color: #428bca;
 }
 div.descrip > ul {
-    text-align: center;
     margin-top: 2em;
 }
 div.descrip > ul > li {
     margin: 5px;
 }
 figure.image > img {
-    border-radius: 5px;      
+    border-radius: 5px;    
+    max-width: 95%;  
 }
 div.descrip > p {
     margin-top: 3em;
@@ -286,6 +287,42 @@ a.close-descrip-institute {
     border-bottom: 2px solid rgb(185, 185, 185);
     padding-bottom: 9px;
     margin-bottom: 1em;
+}
+ul.list-events > li {
+  display: inline-block;
+  width: 30%;
+  padding: 2em;
+  background: white;
+  text-align: center;
+  margin: 0 1em 1em 1em;
+  border-radius: 5px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.3);
+  vertical-align: top;
+}
+ul.list-events li.ng-scope img {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+div.about-event {
+    text-align: justify;
+}
+.list-events h3 {
+    color: #1caff6;
+}
+ul.about-event-social {
+    text-align: center;
+    margin-top: 2em;
+}
+ul.about-event-social > li {
+    margin: 0 10px;
+}
+li.percentage, li.day_left {
+  background: none;
+}
+.about-event-social a.google-plus-icon {
+    border-radius: 5px;
+    text-decoration: none;
 }
 /*****************************/
 /*********** MENU ************/
@@ -315,7 +352,6 @@ a.close-descrip-institute {
   background: #1493d1;
 }
 #main-menu {
-  #1caff6
     text-align: center; background-color: #1caff6; position: fixed; width: 100%; top: 0;z-index: 9;
 }
 #main-menu > div.navbar-header {
@@ -324,6 +360,32 @@ a.close-descrip-institute {
 }
 #main-menu > div.navbar-collapse.collapse {
     display: inline-block !important; vertical-align: top;
+}
+
+/*** modal panel donate***/
+
+.form-panel-help {
+  display: none;
+}
+textarea#descriptionOtherHelp {
+    margin-bottom: 1em;
+}
+
+.form-panel-help div.input-group {
+    margin: 1em 0;
+}
+div.btn-group.btn-group-lg {
+    width: 100%;
+}
+div.btn-group.btn-group-lg button.btn.btn-default {
+    width: 50%;
+}
+
+
+
+
+.form-panel-help div.input-group {
+    margin: 1em 0;
 }
 
 /*modal*/
