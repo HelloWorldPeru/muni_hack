@@ -52,7 +52,6 @@ angular.module('myAppAngularApp')
 					} catch(err){}
 		        }
 	        	function showInformationAboutInstitute(points) {
-		        	debugger
 			    	$scope.currentMarker = points;
 			    	$scope.$apply();
 			    	var element = angular.element('.description_option');
@@ -66,17 +65,15 @@ angular.module('myAppAngularApp')
 	    $scope.markMap = function(data){
 	    	var latitude = data.latitude,
 	    		longitude = data.longitude;	
-	    	debugger;
 	    	$scope.map.setCenter(new google.maps.LatLng( latitude, longitude ) );
 
 	    }
 
-	    $scope.loadEvents = function(){
+	    $scope.loadEvents = function(type, filter){
 	    	$scope.paint=false;
-	    	var url = domain+'event';
+	    	var url = domain+'event/'+type+'/?filter='+filter;
 	    	$http.get(url)
     		.success(function(resp) {
-    			debugger
     			$scope.point = resp;
 
     			var mapOptions = {
@@ -108,7 +105,6 @@ angular.module('myAppAngularApp')
 				          		$scope.map.setCenter(marker.getPosition());
 				          		infowindow.setContent($scope.point[j].name);
 					          	infowindow.open($scope.map, marker);
-					          	debugger
 					          	showInformationAboutInstitute($scope.point[j]);					          	
 				        	}
 				      	})(marker, j));
@@ -116,7 +112,6 @@ angular.module('myAppAngularApp')
     				} catch(err){}
 		        }
 		        function showInformationAboutInstitute(points) {
-		        	debugger
 			    	$scope.currentMarker = points;
 			    	$scope.$apply();
 			    	var element = angular.element('.description_option');
@@ -126,7 +121,7 @@ angular.module('myAppAngularApp')
 			    } 		
     		});
 	    }
-	    $scope.loadEvents();
+	    $scope.loadEvents('free', '');
 	    //$scope.loadSchool();
 	    $scope.seeListSearchOptions = false;
 	    
