@@ -116,6 +116,11 @@ angular.module('myAppAngularApp')
 		        }
 		        function showInformationAboutInstitute(points) {
 			    	$scope.currentMarker = points;
+			    	$http.get('http://127.0.0.1:1337/donation/event/'+$scope.currentMarker.id)
+			    		.success(function(resp) {
+			    			$scope.currentMarker.calculate = resp;
+			    			$scope.currentMarker.calculate.percentaje = Math.round($scope.currentMarker.calculate.percentaje)
+			    	});
 			    	$scope.$apply();
 			    	var element = angular.element('.description_option');
 			    	element.slideDown();
