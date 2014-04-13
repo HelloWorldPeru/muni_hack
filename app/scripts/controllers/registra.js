@@ -14,17 +14,31 @@ angular.module('myAppAngularApp')
   	}
 
   	$scope.addCate = function(cate){
-  		$scope.cate = cate
+  		$scope.cate = cate;
+
+      
+      var element = angular.element('.form-features');
+        element.slideDown();
+        var body = $("html, body");
+        body.animate({scrollTop: element.offset().top}, 'slow');
   	}
 
   	$scope.addParticipate = function(part){
-  		$scope.participate.push(part);
+  		debugger
+      $scope.participate.push(part);
   	}
 
   	$scope.delParticipate = function(participate){
 
   	}
 
+    $scope.showFeatures = function() {
+      debugger
+      var element = angular.element('.features');
+        element.slideDown();
+        var body = $("html, body");
+        body.animate({scrollTop: element.offset().top-50}, 'slow');
+    };
 
   	$scope.create = function(){
   		$http.get(domain+'event/create/?name='+$scope.nombre+

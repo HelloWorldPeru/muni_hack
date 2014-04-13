@@ -327,6 +327,22 @@ li.percentage, li.day_left {
 ul.overlay-info > li {
     background: none;
 }
+.features,.form-features {
+  display: none;
+}
+button.btn.btn-info.ng-pristine.ng-valid {
+    width: 100%;
+    padding: 1em;
+    margin: 1em 0;
+}
+.form-features button.btn.btn-primary {
+    padding: 2;
+}
+button.btn.btn-primary.create-event {
+    width: 100%;
+    padding: 1em;
+    margin-bottom: 0em;
+}
 /*****************************/
 /*********** MENU ************/
 /*****************************/
