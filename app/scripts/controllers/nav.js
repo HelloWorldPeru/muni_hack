@@ -40,7 +40,7 @@ angular.module('myAppAngularApp')
                 window.location.href = "/#/mapa";
             });
         } else { 
-            alert('password');
+            //alert('password');
         }
     };
     $scope.login = function(){

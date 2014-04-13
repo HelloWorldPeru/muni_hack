@@ -2,7 +2,7 @@
 <section id="content-map" ng-class="{increaseWidth:seeListSearchOptions}">
 	<a class='button-search-list' ng-click='searchListToggle()' href="">SEE MORE</a>
 	<div class="search-map" ng-class="{seeSearch:seeListSearchOptions}">
-		<button type="button" class="btn btn-success" ng-click="loadSchool()">Escuelas</button>
+		<!-- <button type="button" class="btn btn-success" ng-click="loadSchool()">Escuelas</button> -->
 		<button type="button" class="btn btn-info" ng-click="loadEvents()">Eventos</button>
 		<br>
 		<form role="form">
@@ -24,3 +24,120 @@
 	</div>
 	<div id="gmaps-canvas"></div>
 </section>
+<section class="description_option">
+	<section>
+		<h2>Place</h2>
+		<a href="" class='close-descrip-institute' ng-click='closeMoreInformationInstitute()'>X</a>
+		<figure class='image'><img ng-src="{{currentMarker.photo}}" alt=""></figure>
+		<div class="descrip">
+			<h3>{{currentMarker.name}}</h3>
+			<h4>{{event.tematica}}</h4>
+			<p>{{currentMarker.descrip}}</p>
+			<ul class='overlay-info'>
+				<li>Limite: {{currentMarker.date}}</li>
+				<li>Horario: {{currentMarker.schedule}}</li>
+				<li>Costo: {{currentMarker.cost}}</li>
+			</ul>
+			<div class="progress">
+				<div class="progress-bar progress-bar-info" role='progressbar' ng-style="{width:'20%'}" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+			</div>
+			<ul class='about-event-social'>
+                <!-- <li><a class='facebook-icon' href="#"><i class='fa fa-facebook'></i></a></li>
+                <li><a class='google-plus-icon' href="#"><i class='fa fa-youtube'></i></a></li>
+                <li><a class='twitter-icon' href="#"><i class='fa fa-twitter'></i></a></li> -->
+				<li class="percentage">65%</li>
+				<li class="day_left">3 dias</li>
+                <li><a class='google-plus-icon' href="" data-toggle="modal" data-target="#myModal2"><i class='fa fa-group'></i> Colabora</a></li>
+            </ul>
+            <!-- <ul>
+                <li><a class='facebook-icon' href="#"><i class='fa fa-facebook'></i></a></li>
+                <li><a class='google-plus-icon' href="#"><i class='fa fa-youtube'></i></a></li>
+                <li><a class='twitter-icon' href="#"><i class='fa fa-twitter'></i></a></li>
+            </ul> -->
+		</div>
+	</section>
+	<ul class='list-events'>
+		<li ng-repeat='event in itemsEvents'>
+			<img ng-src="{{event.photo}}" alt="">
+			<h3>{{event.name}}</h3>
+			<h4>{{event.tematica}}</h4>
+			<div class="about-event">
+				<p class='overlay-descrip'>{{event.descrip}}</p>
+				<ul class='overlay-info'>
+					<li>Limite: {{event.date}}</li>
+					<li>Horario: {{event.schedule}}</li>
+					<li>Costo: {{event.cost}}</li>
+				</ul>
+				<br>
+				<div class="progress">
+					<div class="progress-bar progress-bar-info" role='progressbar' ng-style="{width:'20%'}" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+				</div>
+				<ul class='about-event-social'>
+	                <!-- <li><a class='facebook-icon' href="#"><i class='fa fa-facebook'></i></a></li>
+	                <li><a class='google-plus-icon' href="#"><i class='fa fa-youtube'></i></a></li>
+	                <li><a class='twitter-icon' href="#"><i class='fa fa-twitter'></i></a></li> -->
+					<li class="percentage">65%</li>
+					<li class="day_left">3 dias</li>
+	                <li><a class='google-plus-icon' href="" data-toggle="modal" data-target="#myModal2"><i class='fa fa-group'></i> Colabora</a></li>
+	            </ul>
+			</div>
+		</li>
+	</ul>	
+</section>
+
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+    <div class="modal-dialog">      
+      	<div class="col-md-12">
+	        <div class="panel panel1 panel-default">
+	          	<div class="panel-heading">
+	            	<button type="button" class="close" data-dismiss="modal" ng-click="showPanelHelp('dinero')" aria-hidden="true">&times;</button>
+	            	<h3 class="panel-title"></h3>
+	        	</div>
+	      		<div class="panel-body">
+	      			<div class="btn-group btn-group-lg">
+	      				<button class="btn btn-default" ng-click="showPanelHelp('dinero')">Dinero</button>
+	      				<!-- <button class="btn btn-default" ng-click="showPanelHelp('materiales')">Materiales</button> -->
+	      				<button class="btn btn-default" ng-click="showPanelHelp('otros')">Otros</button>
+	      			</div>
+		            <form class='form-panel-help form-panel-help1' accept-charset="UTF-8" role="form" ng-submit='donateMoneyHelp()'>
+		                <fieldset>
+			                <div class="input-group">
+			                	<span class="input-group-addon">S/. </span>
+			                	<input class="form-control last-form-control" id='money_help_input' placeholder="0.00" type="text" ng-model='money_help'>
+			              	</div>
+			             	 <input class="btn btn-lg btn-success btn-block" type="submit" value="Donate" ng-click="donateMoneyHelp()">
+			              	<br>
+			            </fieldset>
+		          	</form>
+		          <!-- 	<form class='form-panel-help form-panel-help2' accept-charset="UTF-8" role="form" ng-submit='donateToolHelp()'>
+		                <fieldset>
+			                <div class="form-group">
+			                	<label for="tool_help_input">Cantidad(unidades): </label> 
+			                	<input class="form-control last-form-control" id='tool_help_input' placeholder="0" type="number" ng-model='tool_help'>
+			              	</div>
+			              	<div class="form-group">
+								<select name="" id="" ng-options='id as item.id'></select>
+		              		</div>
+			             	 <input class="btn btn-lg btn-info btn-block" type="submit" value="Donate" ng-click="donateToolHelp()">
+			              	<br>
+			            </fieldset>
+		          	</form> -->
+					<form class='form-panel-help form-panel-help3' accept-charset="UTF-8" role="form" ng-submit='donateOtherHelp()'>
+		                <fieldset>
+			                <div class="form-group">
+			                	<label for="subjectOtherHelp"></label>
+			                	<input class="form-control last-form-control" placeholder="Otra Ayuda" id='subjectOtherHelp' type="text" ng-model='other_help'>
+			              	</div>
+			              	<div class="form-group">
+			              		<label for="descriptionOtherHelp"></label>
+			              		<textarea class='form-control last-form-control' name="" id="descriptionOtherHelp" cols="30" rows="10"></textarea>
+		              		</div>
+			             	 <input class="btn btn-lg btn-success btn-block" type="submit" value="Login" ng-click="donateOtherHelp()">
+			              	<br>
+			            </fieldset>
+		          	</form>
+		      	</div>
+      		</div>      
+      	</div>
+    </div>
+
