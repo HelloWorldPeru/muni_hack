@@ -8,7 +8,7 @@ angular.module('myAppAngularApp')
       replace: true,
       restrict: 'E',
       link: function postLink(scope, element, attrs) {
-      	debugger
+      	
       
       }
     };

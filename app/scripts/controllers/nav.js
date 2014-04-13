@@ -29,26 +29,31 @@ angular.module('myAppAngularApp')
         var email = this.email,
         password = this.password,
         repassword = this.repassword;
+        
         if(password == repassword){
-            $http.get(domain+'signup/?email='+email+'&password='+password)
+            var url = domain+'signup/?email='+email+'&password='+password;
+            $http.get(url)
             .success(function(resp){
-
                 $rootScope.$broadcast('getUser',$scope.user);
 
                 $scope.user = resp;
                 $('#myModal').modal('hide')
                 window.location.href = "/#/mapa";
+            })
+            .error(function(data){
+                alert('Ingresa correctamente');
             });
         } else { 
-            //alert('password');
+            alert('change your password');
         }
     };
     $scope.login = function(){
         var email = this.login_email,
-        pass = this.login_password;
-        $http.get(domain+'login/?email='+email+'&password='+pass)
-            .success(function(resp){
+        pass = this.login_password,
+        url = domain+'login/?email='+email+'&password='+pass;
 
+        $http.get(url)
+            .success(function(resp){
                 $scope.user = resp;
                 $rootScope.user = resp;
                 if($scope.user.role == 'USER'){
@@ -59,6 +64,9 @@ angular.module('myAppAngularApp')
                     $('#myModal').modal('hide')
                     window.location.href = "/#/registra";
                 }
+            })
+            .error(function(data){
+                alert('Ingresa correctamente');
             });
     };
 
