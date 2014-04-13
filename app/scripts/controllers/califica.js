@@ -1,9 +1,16 @@
 'use strict';
 
 angular.module('myAppAngularApp')
-  .controller('CalificaCtrl', function ($scope, $http) {
-  	$http.get('../../obras.json')
+  .controller('CalificaCtrl', function ($scope, $http, sessionVariables) {
+  	var domain = sessionVariables.mainDomain,
+  	url = domain + 'work/';
+
+  	$http.get(url)
   	.success(function(resp) {
-  		$scope.items = resp.obras;
+  		// debugger
+  		// for(var i=0;i<resp.length;i++) {
+  		// 	resp[i].video = $(resp[i].video)[0];
+  		// }
+  		$scope.items = resp;
   	});
 });

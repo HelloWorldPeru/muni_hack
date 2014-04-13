@@ -35,7 +35,7 @@
 				</a>
 				<ul class="dropdown-menu" ng-if='user.token' >
 					<li><a ng-class="getClass('/perfil')" ng-href="/#/perfil">Mi Perfil </a></li>
-					<li><a ng-class="getClass('/configuracion')" ng-href="/#/configuracion">Crear evento</a></li>
+					<!-- <li><a ng-class="getClass('/configuracion')" ng-href="/#/configuracion">Crear evento</a></li> -->
           <li><a ng-class="getClass('/configuracion')" ng-href="/#/configuracion" ng-if="user.role == 'USER'">Configuración</a></li>
 					<li><a ng-href="#" ng-click="logout()" >Cerrar Sesion</a></li>
 				</ul>
