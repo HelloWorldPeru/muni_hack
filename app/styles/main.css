@@ -184,6 +184,7 @@ div.search-map {
     display: none;
 }
 ul.points-container {
+  text-align: left;
   width: 70%;
   margin: 0 auto;
   margin-top: 1em;
@@ -314,7 +315,8 @@ a.close-descrip-institute {
   background: #1493d1;
 }
 #main-menu {
-    text-align: center; background: rgb(21, 125, 238); position: fixed; width: 100%; top: 0;z-index: 9;
+  #1caff6
+    text-align: center; background-color: #1caff6; position: fixed; width: 100%; top: 0;z-index: 9;
 }
 #main-menu > div.navbar-header {
     float: none;

@@ -25,6 +25,7 @@ angular.module('myAppAngularApp')
     };
 
     $scope.signup = function(){
+
         var email = this.email,
         password = this.password,
         repassword = this.repassword;
@@ -33,6 +34,7 @@ angular.module('myAppAngularApp')
             .success(function(resp){
                 $scope.user = resp;
                 $('#myModal').modal('hide')
+                window.location.href = "/#/mapa";
             });
         } else { 
             //alert('password');
@@ -43,8 +45,17 @@ angular.module('myAppAngularApp')
         pass = this.login_password;
         $http.get(domain+'login/?email='+email+'&password='+pass)
             .success(function(resp){
+
                 $scope.user = resp;
-                $('#myModal').modal('hide')
+
+                if($scope.user.role == 'USER'){
+                    $('#myModal').modal('hide')
+                    window.location.href = "/#/mapa";
+                } 
+                if($scope.user.role == 'ARTISTA'){
+                    $('#myModal').modal('hide')
+                    window.location.href = "/#/mapa";
+                }
             });
     };
 

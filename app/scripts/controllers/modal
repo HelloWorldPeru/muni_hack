@@ -1,0 +1,34 @@
+'use strict';
+
+angular.module('myAppAngularApp')
+  .controller('modalCtrl', function ($scope, $http, sessionVariables) {
+  	$scope.prueba = "hola mundo";
+  	$scope.signup = function(){
+        debugger;
+        if($scope.password == $scope.repassword){
+            $http.get(domain+'signup/?email='+$scope.email+'&password='+$scope.password)
+            .success(function(resp){
+                debugger
+                $scope.user = resp;
+            });
+        } else { 
+            alert('passeord');
+        }
+    };
+
+    $scope.login = function(email, pass){
+        $http.get(domain+'/ogin/?email='+email+'&password='+password)
+            .success(function(resp){
+                debugger
+            });
+    };
+
+    $scope.logout = function(){
+        $http.get(domain+'logout/?email='+$scope.email+'&password='+$scope.password)
+            .success(function(resp){
+                debugger
+            });
+    };
+  });
+
+//admin@gmail.com
