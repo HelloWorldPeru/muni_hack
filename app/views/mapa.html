@@ -12,3 +12,42 @@
 	</div>
 	<div id="gmaps-canvas"></div>
 </section>
+<section class="description_option">
+	<section>
+		<h2>Place</h2>
+		<a href="" class='close-descrip-institute' ng-click='closeMoreInformationInstitute()'>X</a>
+		<figure class='image'><img ng-src="{{currentMarker[7]}}" alt=""></figure>
+		<div class="descrip">
+			<h3>{{currentMarker[3]}}</h3>
+			<h4>Lugar: {{currentMarker[5]}} - {{currentMarker[4]}}</h4>
+			<p>{{currentMarker[6]}}</p>
+            <ul>
+                <li><a class='facebook-icon' href="#"><i class='fa fa-facebook'></i></a></li>
+                <li><a class='google-plus-icon' href="#"><i class='fa fa-youtube'></i></a></li>
+                <li><a class='twitter-icon' href="#"><i class='fa fa-twitter'></i></a></li>
+            </ul>
+		</div>
+		<br>
+		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li ng-repeat='item in events' data-target="#carousel-example-generic" data-slide-to="$index" ng-class="{active : $first}"></li>
+			</ol>
+      		<div class="carousel-inner">
+	            <div class="item" ng-repeat='item in events'>	            
+					<ul>
+						<li ng-repeat='event in item.page'>
+							<img src="{{event[4]}}" alt="">
+							{{event}}
+						</li>
+					</ul>	
+	            </div>
+          	</div>
+			<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+        </div>
+	</section>
+</section>

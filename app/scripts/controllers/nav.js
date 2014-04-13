@@ -32,10 +32,10 @@ angular.module('myAppAngularApp')
             $http.get(domain+'signup/?email='+email+'&password='+password)
             .success(function(resp){
                 $scope.user = resp;
-                alert('registro');
+                $('#myModal').modal('hide')
             });
         } else { 
-            alert('password');
+            //alert('password');
         }
     };
     $scope.login = function(){
@@ -44,7 +44,7 @@ angular.module('myAppAngularApp')
         $http.get(domain+'login/?email='+email+'&password='+pass)
             .success(function(resp){
                 $scope.user = resp;
-                alert('logeado');
+                $('#myModal').modal('hide')
             });
     };
 
