@@ -15,7 +15,6 @@ angular.module('myAppAngularApp')
 	    	var url = domain+'school';
 	    	$http.get(url)
     		.success(function(resp) {
-    			debugger
     			$scope.school = resp;
 
     			var mapOptions = {
@@ -70,7 +69,11 @@ angular.module('myAppAngularApp')
 	    }
 
 	    $scope.loadEvents = function(type, filter){
-	    	$scope.paint=false;
+	    	$scope.state=false;
+	    	if(filter == 'free'){
+	    		$scope.state=true;
+	    	}
+
 	    	var url = domain+'event/'+type+'/?filter='+filter;
 	    	$http.get(url)
     		.success(function(resp) {
