@@ -175,4 +175,19 @@ debugger
 	  		// if(type == 'materiales') angular.element('.form-panel-help2').show();
 	  		if(type == 'otros') angular.element('.form-panel-help3').show();
 	  	};
+
+	  	$scope.donateMoneyHelp = function() {
+	  		// $scope.$apply();
+	  		$scope.currentMarker.calculate.percentaje += $scope.money_help/$scope.currentMarker.cost;
+	  		$scope.money_help = '';
+	  		// $scope.$apply();
+	  		debugger
+	  		angular.element('.main-progress-bar').css('width',$scope.currentMarker.calculate.percentaje+"%");
+	  		$('#myModal2').modal('hide');
+	  	};
+	  	$scope.donateOtherHelp = function() {
+	  		$scope.other_help = '';
+	  		$scope.descriptionOtherHelp = '';
+	  		$('#myModal2').modal('hide');	
+	  	}
   	});
