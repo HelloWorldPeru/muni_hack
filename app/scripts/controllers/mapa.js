@@ -107,7 +107,6 @@ angular.module('myAppAngularApp')
 	    $scope.seeListSearchOptions = false;
 	    
 	    $scope.searchListToggle = function() {
-	    	debugger
 
 	    	$scope.seeListSearchOptions = !$scope.seeListSearchOptions;
 

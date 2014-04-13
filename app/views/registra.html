@@ -1,6 +1,115 @@
-<div class="jumbotron">
-  <br>
-  <br>
-  <h1>Bienvenido!</h1>
-  <br>
+<div class="jumbotron" style="height: 100%;">
+	<div>
+		  <h1>El hombre crea cultura</h1>
+		  <br>
+		  <p> y mediante la cultura se crea a sí mismo.</p>
+		  <br>
+		  <p><a class="btn btn-primary btn-lg" role="button">Crea tu proyecto</a></p>
+	</div>
+  <div style="margin-top: 10%;">
+  		<p>En que categoria esta tu proyecto</p>
+		<!-- Indicates a successful or positive action -->
+		<button type="button" class="btn btn-success" ng-click="addCate(DANZA)">Danza</button>
+
+		<!-- Contextual button for informational alert messages -->
+		<button type="button" class="btn btn-info" ng-click="addCate(TEATRO)">Teatro</button>
+
+		<!-- Indicates caution should be taken with this action -->
+		<button type="button" class="btn btn-warning" ng-click="addCate(MUSICA)">Musica</button>
+
+		<!-- Indicates a dangerous or potentially negative action -->
+		<button type="button" class="btn btn-danger" ng-click="addCate(ARTE)">Arte</button>
+  </div>
+  <div style="margin-top: 10%; width: 76%;margin-left: 11%;">
+  	<form class="form-horizontal" role="form">
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label"></label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="Nombre" ng-model="nombre">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputdescrip" class="col-sm-2 control-label"></label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputdescrip" placeholder="Descripcion" ng-model="descrip">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputdate" class="col-sm-2 control-label"></label>
+    <div class="col-sm-10">
+      <input type="date" class="form-control" id="inputdate" placeholder="Fecha" ng-model="fecha">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputschedule" class="col-sm-2 control-label"></label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputschedule" placeholder="Horario" ng-model="hora">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputphoto" class="col-sm-2 control-label"></label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputphoto" placeholder="Foto" ng-model="foto">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputpresu" class="col-sm-2 control-label"></label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputpresu" placeholder="Presupuesto" ng-model="presu">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputentrada" class="col-sm-2 control-label"></label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputentrada" placeholder="Entrada" ng-model="entrada">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputLimite" class="col-sm-2 control-label"></label>
+    <div class="col-sm-10">
+      <input type="date" class="form-control" id="inputLimite" placeholder="Fecha Limite" ng-model="fechLimit">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputIntegrante" class="col-sm-2 control-label"></label>
+    <div class="col-sm-10">
+    	<div class="input-group">
+      <input type="text" class="form-control" list="browsers" >
+      <datalist id="browsers">
+		  <option ng-options="c.email for c in listUser">
+		</datalist>
+
+
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" ng-model="participate" ng-click="addParticipate()">Go!</button>
+      </span>
+    </div><!-- /input-group -->
+<!--       <input type="text" class="form-control" id="inputIntegrante" placeholder="Integrante">
+ -->    </div>
+  </div>
+  <div class="form-group">
+		<div class="panel panel-default">
+		  <!-- Default panel contents -->
+		  <div class="panel-heading">Integrantes</div>
+
+		  <!-- Table -->
+		  <table class="table">
+		    <tr>
+		    	<td>Hola</td>
+		    </tr>
+		  </table>
+		</div>
+	</div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-primary">Crear</button>
+    </div>
+  </div>
+</form>
+  </div>
+  <div>
+
+  </div>
+
 </div>

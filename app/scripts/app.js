@@ -25,7 +25,8 @@ angular
         controller: 'InicioCtrl'
       })
       .when('/perfil', {
-        templateUrl: 'views/perfil.html'
+        templateUrl: 'views/perfil.html',
+        controller: 'PerfilCtrl'
       })
       .when('/configuracion', {
         templateUrl: 'views/configuracion.html'
@@ -35,7 +36,8 @@ angular
         controller: 'MapaCtrl'
       })
       .when('/registra', {
-        templateUrl: 'views/registra.html'
+        templateUrl: 'views/registra.html',
+        controller: 'RegistraCtrl'
       })
       .when('/califica', {
         templateUrl: 'views/califica.html'

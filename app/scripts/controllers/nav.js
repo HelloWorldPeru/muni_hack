@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('myAppAngularApp')
-  .controller('NavCtrl', function ($scope, $location, $http, sessionVariables) {
+  .controller('NavCtrl', function ($scope, $location, $http, $rootScope, sessionVariables) {
     var domain = sessionVariables.mainDomain;
     $scope.user = {}
 
@@ -32,6 +32,9 @@ angular.module('myAppAngularApp')
         if(password == repassword){
             $http.get(domain+'signup/?email='+email+'&password='+password)
             .success(function(resp){
+
+                $rootScope.$broadcast('getUser',$scope.user);
+
                 $scope.user = resp;
                 $('#myModal').modal('hide')
                 window.location.href = "/#/mapa";
@@ -47,7 +50,7 @@ angular.module('myAppAngularApp')
             .success(function(resp){
 
                 $scope.user = resp;
-
+                $rootScope.user = resp;
                 if($scope.user.role == 'USER'){
                     $('#myModal').modal('hide')
                     window.location.href = "/#/mapa";

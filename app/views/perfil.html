@@ -1,9 +1,8 @@
 <div class="jumbotron">
 <ul class="list-group">
-  <li class="list-group-item"><input type="text" class="form-control" id="exampleInputEmail1" placeholder="email"></li>
-  <li class="list-group-item"><input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nombre"></li>
-  <li class="list-group-item"><input type="text" class="form-control" id="exampleInputEmail1" placeholder="Foto"></li>
-  <li class="list-group-item">Escuela</li> 
-  <li class="list-group-item"><input type="text" class="form-control" id="exampleInputEmail1" placeholder="Rol" readonly></li>
+  <li class="list-group-item"><input type="text" class="form-control" id="exampleInputEmail1" ng-model="user.email" placeholder="email"></li>
+  <li class="list-group-item"><input type="text" class="form-control" id="exampleInputEmail1" placeholder="Foto" ng-model="user.photo"></li>
+  <li class="list-group-item">{{ user.school.name }}</li> 
+  <li class="list-group-item"><input type="text" class="form-control" id="exampleInputEmail1" placeholder="Rol" readonly ng-model="user.role"></li>
 </ul>
 </div>
