@@ -4,8 +4,6 @@
 		  <br>
 		  <p> y mediante la cultura se crea a sí mismo.</p>
 		  <br>
-      <a href=""  ng-click='showFeatures()'>hio</a>
-      {{ prueba }}
 		  <p><a class="btn btn-primary btn-lg" href='' ng-click='showFeatures()' role="button">Crea tu proyecto</a></p>
 	</div>
   <div style="margin-top: 10%;" class='features'>
@@ -37,7 +35,7 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="inputdate" class="col-sm-2 control-label"></label>
+    <label for="inputdate" class="col-sm-2 control-label">Realizacion</label>
     <div class="col-sm-10">
       <input type="date" class="form-control" id="inputdate" placeholder="Fecha" ng-model="fecha">
     </div>
@@ -67,23 +65,20 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="inputLimite" class="col-sm-2 control-label"></label>
+    <label for="inputLimite" class="col-sm-2 control-label">Limite</label>
     <div class="col-sm-10">
       <input type="date" class="form-control" id="inputLimite" placeholder="Fecha Limite" ng-model="fechLimit">
     </div>
   </div>
   <div class="form-group">
-    <label for="inputIntegrante" class="col-sm-2 control-label"></label>
+    <label for="inputIntegrante" class="col-sm-2 control-label">
+    	<button class="btn btn-info" type="button" ng-click="addParticipate()">add</button>
+    </label>
     <div class="col-sm-10">
-    	<div class="">
-      <input type="text" class="form-control" list="browsers" >
-      <datalist id="browsers">
-		  <option ng-options="c.email for c in listUser">
-		</datalist>
-    <button class="btn btn-info" type="button" ng-model="participate" ng-click="addParticipate()">Go!</button>
-    </div><!-- /input-group -->
-<!--       <input type="text" class="form-control" id="inputIntegrante" placeholder="Integrante">
- -->    </div>
+
+    	<select class="form-control" ng-model="part" ng-options="c.email for c in listUser">
+		</select>
+  </div>
   </div>
   <div class="form-group">
 		<div class="panel panel-default">
@@ -92,8 +87,8 @@
 
 		  <!-- Table -->
 		  <table class="table">
-		    <tr ng-repeat='item in participate'>
-		    	<td>{{item}}}</td>
+		    <tr ng-repeat='item in participates'>
+		    	<td>{{ item.email }}</td>
 		    </tr>
 		  </table>
 		</div>
@@ -101,7 +96,7 @@
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-primary create-event" ng-click='create()'>Crear</button>
+      <button type="submit" class="btn btn-primary create-event" ng-click='createProject()'>Crear</button>
     </div>
   </div>
 </form>
