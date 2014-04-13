@@ -13,19 +13,14 @@
 			    <input type="text" style="height: 30px !important; width: 77% !important;" class="form-control" id="exampleInputEmail1" placeholder="Search" value="" ng-model='search'>
 			  </div>
   		</form>
-		<ul class='points-container' ng-show="paint">
-			<li ng-repeat='item in school | filter: search'>
-				<a href="" ng-click="markMap(item)" >{{ item.name }}</a>
-			</li>
-		</ul>
-		<ul class='points-container' ng-hide="paint">
+		<ul class='points-container'>
 			<li ng-repeat='item in point | filter: search'>
 				<a href="" ng-click="markMap(item)" >{{ item.name }}</a>
 			</li>
 		</ul>
 	</div>
 	<div id="gmaps-canvas"></div>
-	<div>
+	<div ng-hide="state">
 		<button type="button" class="btn btn-success" ng-click="loadEvents('free', 'DANZA')">Danza</button>
 
 		<!-- Contextual button for informational alert messages -->
