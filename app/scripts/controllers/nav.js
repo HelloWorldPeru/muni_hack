@@ -54,7 +54,7 @@ angular.module('myAppAngularApp')
                 } 
                 if($scope.user.role == 'ARTISTA'){
                     $('#myModal').modal('hide')
-                    window.location.href = "/#/mapa";
+                    window.location.href = "/#/registra";
                 }
             });
     };
