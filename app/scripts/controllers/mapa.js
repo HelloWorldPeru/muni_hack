@@ -51,7 +51,7 @@ angular.module('myAppAngularApp')
 			            $scope.completeLoatedMap = true;
 					} catch(err){}
 		        }
-		        function showInformationAboutInstitute(points) {
+	        	function showInformationAboutInstitute(points) {
 		        	debugger
 			    	$scope.currentMarker = points;
 			    	$scope.$apply();
@@ -105,17 +105,29 @@ angular.module('myAppAngularApp')
 		                google.maps.event.addListener(marker, 'click', (function(marker, j) {
 					        return function() {
 					        	debugger
+				          		$scope.map.setCenter(marker.getPosition());
 				          		infowindow.setContent($scope.point[j].name);
-					          	infowindow.open($scope.map, marker);				          	
+					          	infowindow.open($scope.map, marker);
+					          	debugger
+					          	showInformationAboutInstitute($scope.point[j]);					          	
 				        	}
 				      	})(marker, j));
 			            $scope.completeLoatedMap = true;
     				} catch(err){}
-		        }		
+		        }
+		        function showInformationAboutInstitute(points) {
+		        	debugger
+			    	$scope.currentMarker = points;
+			    	$scope.$apply();
+			    	var element = angular.element('.description_option');
+			    	element.slideDown();
+			    	var body = $("html, body");
+					body.animate({scrollTop: element.offset().top-50}, 'slow');
+			    } 		
     		});
 	    }
-
-	    $scope.loadSchool();
+	    $scope.loadEvents();
+	    //$scope.loadSchool();
 	    $scope.seeListSearchOptions = false;
 	    
 	    $scope.searchListToggle = function() {
