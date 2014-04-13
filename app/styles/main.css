@@ -6,7 +6,6 @@ html, body {
 body {
   background: #e9e9e9;
   padding-top: 20px;
-  padding-bottom: 20px;
 }
 ul {
   margin: 0;
@@ -351,9 +350,30 @@ button.btn.btn-primary.create-event {
     border-radius: 5px;
     -webkit-transform: scale(.9);
     -webkit-transition: all .4s ease-in-out;
+    max-width: 50%;
+    max-height: 70%;
 }
 .jumbotron li.ng-scope img:hover {
     -webkit-transform: scale(1);
+}
+.like img {
+    max-width: 3em;
+    right: 3em;
+    background: rgba(218, 218, 218, 0.78);
+}
+.post {
+  text-align: left;
+}
+.post-list > li {
+    display: inline-block;
+    vertical-align: top;
+    width: 25%;
+}
+.post p {
+    text-align: left;
+    font-weight: 100;
+    font-family: sans-serif;
+    letter-spacing: -1px;
 }
 /*****************************/
 /*********** MENU ************/
@@ -418,7 +438,15 @@ div.btn-group.btn-group-lg button.btn.btn-default {
 .form-panel-help div.input-group {
     margin: 1em 0;
 }
-
+a.like {
+    display: block;
+width: 8em;
+text-align: right;
+margin: 0 auto;
+}
+figure {
+    position: relative;
+}
 /*modal*/
 body > div.modal-backdrop.fade.in {
     background: #34495e;

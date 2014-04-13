@@ -1,10 +1,14 @@
 <div class="jumbotron">
-  <ul>
+  <ul class='post-list'>
   	<li ng-repeat='item in items'>
- 		<figure>
- 			<img ng-src="{{item.photo}}" alt="">
+ 		<figure class='post'>
+ 			<!-- <video-frame video='item.video'></video-frame> -->
+ 			<img ng-src="{{item.video}}" alt="">
  			<h3>{{item.name}}</h3>
-			<h4>{{item.titulo}}</h4>
+ 			<p>{{item.descrip}}</p>
+			<a href="" class='like'>
+				{{item.cheers}}<img src="http://www.flaticon.com/png/256/2356.png" alt="">
+			</a>
  		</figure>
   	</li>
   </ul>

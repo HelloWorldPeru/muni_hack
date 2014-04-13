@@ -1,3 +1,10 @@
+<style>
+  div#gmaps-canvas {
+    height: 12em;
+    width: 40%;
+    margin-top: 1em;
+}
+</style>
 <div class="jumbotron" style="height: 100%;">
 	<div>
 		  <h1>El hombre crea cultura</h1>
@@ -9,17 +16,17 @@
   <div style="margin-top: 10%;" class='features'>
   		<p>En que categoria esta tu proyecto</p>
 		<!-- Indicates a successful or positive action -->
-		<button type="button" class="btn btn-success" ng-click="addCate(DANZA)">Danza</button>
+		<button type="button" class="btn btn-success" ng-click="addCate('DANZA')">Danza</button>
 
 		<!-- Contextual button for informational alert messages -->
-		<button type="button" class="btn btn-info" ng-click="addCate(TEATRO)">Teatro</button>
+		<button type="button" class="btn btn-info" ng-click="addCate('TEATRO')">Teatro</button>
 
 		<!-- Indicates caution should be taken with this action -->
-		<button type="button" class="btn btn-warning" ng-click="addCate(MUSICA)">Musica</button>
-
+		<button type="button" class="btn btn-warning" ng-click="addCate('MUSICA')">Musica</button>
 		<!-- Indicates a dangerous or potentially negative action -->
-		<button type="button" class="btn btn-danger" ng-click="addCate(ARTE)">Arte</button>
+		<button type="button" class="btn btn-danger" ng-click="addCate('ARTE')">Arte</button>
   </div>
+  <div id="gmaps-canvas"></div>
   <div class='form-features' style="margin-top: 10%; width: 76%;margin-left: 11%;">
   	<form class="form-horizontal" role="form">
   <div class="form-group">
