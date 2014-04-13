@@ -4,7 +4,7 @@
 
 
 	<div class="search-map" ng-class="{seeSearch:seeListSearchOptions}">
-		<button type="button" class="btn btn-success" ng-click="loadEvents('pay', '')">De pago</button>
+		<button type="button" class="btn btn-success" ng-click="loadEvents('pay', '')">Colaborativos</button>
 		<button type="button" class="btn btn-info" ng-click="loadEvents('free', '')">Gratuitos</button>
 		<br>
 		<form role="form">
@@ -48,7 +48,7 @@
 				<li>Costo: S/.{{currentMarker.cost}}</li>
 			</ul>
 			<div class="progress" ng-if="currentMarker.cost != '0'">
-				<div class="progress-bar progress-bar-info" role='progressbar' ng-style="{width:'{{ currentMarker.calculate.percentaje}}%'}" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+				<div class="progress-bar progress-bar-info" role='progressbar' ng-style="{width:'{{ currentMarker.calculate.percentaje }}%'}" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
 			</div>
 			<ul class='about-event-social'>
                 <!-- <li><a class='facebook-icon' href="#"><i class='fa fa-facebook'></i></a></li>
