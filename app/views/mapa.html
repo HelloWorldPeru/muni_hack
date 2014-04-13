@@ -2,31 +2,25 @@
 <section id="content-map" ng-class="{increaseWidth:seeListSearchOptions}">
 	<a class='button-search-list' ng-click='searchListToggle()' href="">SEE MORE</a>
 	<div class="search-map" ng-class="{seeSearch:seeListSearchOptions}">
-		<button type="button" class="btn btn-success">Escuelas</button>
-		<button type="button" class="btn btn-info">Eventos</button>
+		<button type="button" class="btn btn-success" ng-click="loadSchool()">Escuelas</button>
+		<button type="button" class="btn btn-info" ng-click="loadEvents()">Eventos</button>
 		<br>
 		<form role="form">
 			  <div class="form-group">
 			    <label for="exampleInputEmail1"></label>
-			    <input style="width: 90% !important;" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="" ng-model='hola'>
+			    <input type="text" style="height: 30px !important; width: 77% !important;" class="form-control" id="exampleInputEmail1" placeholder="Search" value="" ng-model='search'>
 			  </div>
-			  {{ hola }}
   		</form>
-  		<input name="prueba" np-model="search" />
-  		{{ search }}
-		<ul class='points-container'>
+		<ul class='points-container' ng-show="paint">
 			<li ng-repeat='item in school | filter: search'>
-				<a href="item">{{ item[3] }}</a>
+				<a href="" ng-click="markMap(item)" >{{ item.name }}</a>
 			</li>
 		</ul>
-
-<!-- 		<ul class='points-container'>
-			<li ng-repeat='item in points | filter: search'>
-				<a href="item">{{ item[3] }}</a>
+		<ul class='points-container' ng-hide="paint">
+			<li ng-repeat='item in point | filter: search'>
+				<a href="" ng-click="markMap(item)" >{{ item.name }}</a>
 			</li>
-		</ul> -->
-
-
+		</ul>
 	</div>
 	<div id="gmaps-canvas"></div>
 </section>
