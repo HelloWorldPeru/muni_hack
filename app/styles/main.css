@@ -164,6 +164,10 @@ body > footer {
     display: block;
     color: white;
 }
+.image_intro {
+  max-width: 70%;
+  margin: 20px;
+}
 /*map*/
 #gmaps-canvas {
   width: 65%;
@@ -568,4 +572,7 @@ body > div.modal-backdrop.fade.in {
     margin-left: 0;
     margin-top: 3%;
   }
+  .btn-email, .btn-facebook, .btn-google {
+    font-size: 12px;
+}
 }

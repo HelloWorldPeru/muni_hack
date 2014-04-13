@@ -4,7 +4,7 @@ angular.module('myAppAngularApp')
   .controller('CalificaCtrl', function ($scope, $http, sessionVariables) {
   	var domain = sessionVariables.mainDomain,
   	url = domain + 'work/';
-
+debugger
   	$http.get(url)
   	.success(function(resp) {
   		// debugger
@@ -14,3 +14,4 @@ angular.module('myAppAngularApp')
   		$scope.items = resp;
   	});
 });
+//num/total

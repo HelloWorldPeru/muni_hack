@@ -170,4 +170,10 @@ debugger
 	  		// if(type == 'materiales') angular.element('.form-panel-help2').show();
 	  		if(type == 'otros') angular.element('.form-panel-help3').show();
 	  	};
+
+	  	$scope.donateMoneyHelp = function() {
+	  		var perce = $scope.money_help/currentMarker.cost;
+	  		
+	  		debugger
+	  	};
   	});
